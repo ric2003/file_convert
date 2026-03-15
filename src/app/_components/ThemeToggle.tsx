@@ -24,8 +24,8 @@ export function ThemeToggle() {
     { id: "dark", icon: Moon, label: "Dark Mode" },
   ] as const;
 
-  const currentTheme = theme || "system";
-  const activeOption = options.find((o) => o.id === currentTheme) || options[1];
+  const currentTheme = theme ?? "system";
+  const activeOption = options.find((o) => o.id === currentTheme) ?? options[1];
   const inactiveOptions = options.filter((o) => o.id !== currentTheme);
   const orderedOptions = [...inactiveOptions, activeOption];
 
